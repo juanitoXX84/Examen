@@ -1,0 +1,191 @@
+/* Pokedex super estilizada */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+/* Fondo de la página */
+body {
+    font-family: 'Press Start 2P', cursive;
+    background: linear-gradient(135deg, #ff4b4b, #ffcc00, #2f76c7);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+    color: white;
+    overflow: hidden;
+}
+
+/* Animación para el fondo */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Contenedor de la Pokedex */
+.pokedex-container {
+    background: rgba(255, 255, 255, 0.15);
+    border: 8px solid #222;
+    border-radius: 20px;
+    padding: 30px;
+    width: 420px;
+    text-align: center;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    position: relative;
+    overflow: hidden;
+    animation: popUp 0.5s ease-out;
+}
+
+/* Animación de entrada para el contenedor */
+@keyframes popUp {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Pantallas */
+.screen {
+    width: 360px;
+    height: 180px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 50%, rgba(0, 0, 0, 0.6) 100%);
+    box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.8);
+}
+
+/* Pantalla superior */
+#top-screen {
+    background: rgba(255, 255, 255, 0.25);
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+}
+
+/* Pantalla inferior (información) */
+#bottom-screen {
+    background: rgba(0, 255, 0, 0.4);
+    color: #000;
+    font-size: 14px;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.8);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Input de búsqueda */
+input[type="text"] {
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    width: 240px;
+    font-size: 16px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-top: 10px;
+    color: #333;
+    font-family: 'Roboto Mono', monospace;
+    transition: all 0.3s ease;
+}
+
+/* Foco en el input */
+input[type="text"]:focus {
+    outline: none;
+    border: 2px solid #ffcc00;
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.8);
+}
+
+/* Botón de búsqueda */
+button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(to bottom, #ffcc00, #ff9900);
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+/* Hover y active en el botón */
+button:hover {
+    background: linear-gradient(to bottom, #ffdd44, #ffbb00);
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 255, 0, 0.8);
+}
+
+button:active {
+    transform: translateY(3px);
+    box-shadow: none;
+}
+
+/* Información del Pokémon */
+.pokemon-info {
+    padding: 25px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    margin-top: 20px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+}
+
+/* Nombre del Pokémon */
+.pokemon-info h2 {
+    text-transform: capitalize;
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+}
+
+/* Imagen del Pokémon */
+.pokemon-info img {
+    width: 150px;
+    height: 150px;
+    margin: 10px 0;
+    border: 4px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+/* Animación al pasar el mouse sobre la imagen */
+.pokemon-info img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 1);
+}
+
+/* Descripción del Pokémon */
+.pokemon-description {
+    font-size: 14px;
+    color: #ddd;
+    margin-top: 10px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Animación para el texto de la descripción */
+@keyframes slideUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.pokemon-description {
+    animation: slideUp 1s ease-in-out;
+}
